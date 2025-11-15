@@ -199,7 +199,7 @@ public class ServicioRepositoryBaseDatos {
             String consulta = "SELECT servicios.*, categorias.nombre AS nombreCategoria " +
                     "FROM servicios " +
                     "JOIN categorias ON servicios.idCategoria = categorias.id " +
-                    "WHERE servicios.idCategoria = ?";
+                    "WHERE servicios.idCategoria = ?"; // Para filtrar por estado: AND servicios.estado = true
             sentencia = conexionABaseDeDatos.getConnection().prepareStatement(consulta);
             sentencia.setInt(1, idCategoria);
 
